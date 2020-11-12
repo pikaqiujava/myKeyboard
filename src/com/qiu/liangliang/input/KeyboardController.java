@@ -49,11 +49,15 @@ class BuildCombination{
         } else {
             // combination
             String substring = next.substring(0, 1);
+            if (!map.containsKey(substring)){
+                System.out.println("Illegal Input");
+                return;
+            }
             String letters = map.get(substring);
-                for (int i = 0; i < letters.length(); i++) {
-                    // recursive
-                    buildLetter(combination + letters.substring(i, i + 1), next.substring(1));
-                }
+            for (int i = 0; i < letters.length(); i++) {
+                // recursive
+                buildLetter(combination + letters.substring(i, i + 1), next.substring(1));
+            }
                 // stub
 //            if (!"".equals(letters)){  // Can Be Deleted Without Compensation
 //            }else {
