@@ -50,15 +50,16 @@ class BuildCombination{
             // combination
             String substring = next.substring(0, 1);
             String letters = map.get(substring);
-            if (!"".equals(letters)){  // Can Be Deleted Without Compensation
                 for (int i = 0; i < letters.length(); i++) {
                     // recursive
                     buildLetter(combination + letters.substring(i, i + 1), next.substring(1));
                 }
-            }else {
-                // compensation (situation: null + letter)
-                buildLetter("", next.substring(1));
-            }
+                // stub
+//            if (!"".equals(letters)){  // Can Be Deleted Without Compensation
+//            }else {
+//                // compensation (situation: null + letter)
+//                buildLetter("", next.substring(1));
+//            }
         }
     }
 }
